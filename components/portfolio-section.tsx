@@ -3,13 +3,9 @@
 import { motion } from "framer-motion"
 import { portfolioData } from "@/lib/portfolio-data"
 import { PortfolioSlider } from "./portfolio-slider"
-import { PortfolioGallery } from "./portfolio-gallery"
+// Removed PortfolioGallery as it's not needed for only websites
 
 export function PortfolioSection() {
-  const logoProjects = portfolioData.filter((project) => project.category === "logos")
-  const posterProjects = portfolioData.filter((project) => project.category === "posters")
-  const socialMediaProjects = portfolioData.filter((project) => project.category === "social-media")
-  const presentationProjects = portfolioData.filter((project) => project.category === "presentations")
   const websiteProjects = portfolioData.filter((project) => project.category === "websites")
 
   return (
@@ -25,47 +21,22 @@ export function PortfolioSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">My Creative Portfolio</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">My Web Development Portfolio</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore my diverse collection of creative work spanning design and digital experiences
+            Explore my collection of responsive, user-friendly websites and web applications built with modern
+            technologies.
           </p>
         </motion.div>
 
-        {/* Logo Design Slider */}
-        <PortfolioSlider
-          items={logoProjects}
-          title="✨ Logo Design"
-          description="Brand identities that make lasting impressions"
-        />
-
-        {/* Poster Design Gallery */}
-        <PortfolioGallery
-          items={posterProjects}
-          title="🎨 Poster Design"
-          description="Eye-catching posters for events and campaigns"
-        />
-
-        {/* Social Media Content Slider */}
-        <PortfolioSlider
-          items={socialMediaProjects}
-          title="📱 Social Media Content"
-          description="Engaging content that boosts online presence"
-        />
-
-        {/* Presentation Design Gallery */}
-        <PortfolioGallery
-          items={presentationProjects}
-          title="📊 Presentation Design"
-          description="Professional presentations that communicate effectively"
-        />
-
         {/* Website Projects Slider */}
-        {websiteProjects.length > 0 && (
+        {websiteProjects.length > 0 ? (
           <PortfolioSlider
             items={websiteProjects}
-            title="💻 Web Development"
-            description="Modern websites with beautiful design and functionality"
+            title="💻 Web Development Projects"
+            description="Modern websites and web applications with beautiful design and robust functionality."
           />
+        ) : (
+          <div className="text-center text-muted-foreground text-lg">No web projects to display yet.</div>
         )}
       </div>
     </section>

@@ -4,19 +4,20 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Shadcn default colors for LIGHT theme */
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%; /* Near black */
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
     --primary: 330 81% 60%; /* Pink-500 */
     --primary-foreground: 210 40% 98%;
-    --secondary: 320 70% 96%; /* Purple-50 */
+    --secondary: 260 97% 65%; /* Purple-500 */
     --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 320 70% 96%; /* Purple-50 */
+    --muted: 260 100% 98%; /* Very light purple */
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 320 70% 96%; /* Purple-50 */
+    --accent: 260 100% 98%; /* Very light purple */
     --accent-foreground: 222.2 84% 4.9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -24,18 +25,53 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 330 81% 60%; /* Pink-500 */
     --radius: 1rem;
+
+    /* Custom vibrant colors for LIGHT mode (Version 2 colors) */
+    --rose-50: 350 100% 97%;
+    --rose-100: 350 100% 95%;
+    --rose-200: 350 96% 90%;
+    --rose-300: 350 96% 82%;
+    --rose-400: 350 92% 71%;
+    --rose-500: 350 88% 60%;
+    --rose-600: 350 80% 50%;
+    --rose-700: 350 80% 41%;
+    --rose-800: 350 79% 35%;
+    --rose-900: 350 78% 30%;
+
+    --purple-50: 260 100% 98%;
+    --purple-100: 260 100% 96%;
+    --purple-200: 260 100% 92%;
+    --purple-300: 260 99% 85%;
+    --purple-400: 260 98% 75%;
+    --purple-500: 260 97% 65%;
+    --purple-600: 260 90% 56%;
+    --purple-700: 260 85% 50%;
+    --purple-800: 260 70% 40%;
+    --purple-900: 260 66% 32%;
+
+    --pink-50: 330 100% 98%;
+    --pink-100: 330 100% 97%;
+    --pink-200: 330 96% 90%;
+    --pink-300: 330 95% 82%;
+    --pink-400: 330 90% 70%;
+    --pink-500: 330 81% 60%;
+    --pink-600: 330 73% 51%;
+    --pink-700: 330 73% 42%;
+    --pink-800: 330 73% 35%;
+    --pink-900: 330 73% 29%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Shadcn default colors for DARK theme */
+    --background: 222.2 84% 4.9%; /* Very dark blue */
+    --foreground: 210 40% 98%; /* Near white */
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 330 81% 60%; /* Pink-500 */
+    --primary: 330 81% 40%; /* Darker Pink for primary in dark mode */
     --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 260 75% 35%; /* Darker Purple for secondary in dark mode */
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -45,32 +81,76 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 330 81% 60%; /* Pink-500 */
+    --ring: 330 81% 40%; /* Darker Pink for ring in dark mode */
+
+    /* Custom vibrant colors for DARK mode (adjusted for darker theme) */
+    --rose-50: 350 50% 10%;
+    --rose-100: 350 55% 12%;
+    --rose-200: 350 60% 15%;
+    --rose-300: 350 65% 18%;
+    --rose-400: 350 70% 22%;
+    --rose-500: 350 75% 28%;
+    --rose-600: 350 80% 35%;
+    --rose-700: 350 85% 40%;
+    --rose-800: 350 90% 45%;
+    --rose-900: 350 95% 50%;
+
+    --purple-50: 260 50% 10%;
+    --purple-100: 260 55% 12%;
+    --purple-200: 260 60% 15%;
+    --purple-300: 260 65% 18%;
+    --purple-400: 260 70% 22%;
+    --purple-500: 260 75% 28%;
+    --purple-600: 260 80% 35%;
+    --purple-700: 260 85% 40%;
+    --purple-800: 260 90% 45%;
+    --purple-900: 260 95% 50%;
+
+    --pink-50: 330 50% 10%;
+    --pink-100: 330 55% 12%;
+    --pink-200: 330 60% 15%;
+    --pink-300: 330 65% 18%;
+    --pink-400: 330 70% 22%;
+    --pink-500: 330 75% 28%;
+    --pink-600: 330 80% 35%;
+    --pink-700: 330 85% 40%;
+    --pink-800: 330 90% 45%;
+    --pink-900: 330 95% 50%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  html {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    overflow-x: hidden; /* Added for mobile layout fix */
   }
   body {
-    @apply bg-background text-foreground;
+    /* Removed bg-background and text-foreground from body as html now handles it */
     overflow-x: hidden; /* Added for mobile layout fix */
   }
 }
 
 @layer utilities {
   .bg-grid-pattern {
-    background-image: radial-gradient(circle, rgba(236, 72, 153, 0.1) 1px, transparent 1px);
+    /* Using HSL variables directly for gradients and effects */
+    background-image: radial-gradient(circle, hsla(var(--pink-500), 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500 bg-clip-text text-transparent;
+    background: linear-gradient(to right, hsl(var(--pink-500)), hsl(var(--purple-500)), hsl(var(--rose-500)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   .gradient-text-alt {
-    @apply bg-gradient-to-r from-rose-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+    background: linear-gradient(to right, hsl(var(--rose-400)), hsl(var(--purple-400)), hsl(var(--pink-400)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   .glass-effect {
@@ -84,7 +164,7 @@
     left: 10%;
     width: 100px;
     height: 100px;
-    background: linear-gradient(45deg, #ec4899, #a855f7);
+    background: linear-gradient(45deg, hsl(var(--pink-500)), hsl(var(--purple-500)));
     border-radius: 50%;
     opacity: 0.1;
     animation: float-slow 8s ease-in-out infinite;
@@ -97,18 +177,11 @@
     right: 15%;
     width: 80px;
     height: 80px;
-    background: linear-gradient(45deg, #f472b6, #db2777);
+    background: linear-gradient(45deg, hsl(var(--pink-400)), hsl(var(--rose-600)));
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     opacity: 0.1;
     animation: float-slow 10s ease-in-out infinite reverse;
   }
-}
-
-/* Smooth scrolling with offset for fixed navbar */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-  overflow-x: hidden; /* Added for mobile layout fix */
 }
 
 /* Custom scrollbar */
@@ -121,12 +194,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ec4899, #a855f7);
+  background: linear-gradient(to bottom, hsl(var(--pink-500)), hsl(var(--purple-500)));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #db2777, #9333ea);
+  background: linear-gradient(to bottom, hsl(var(--pink-600)), hsl(var(--purple-600)));
 }
 
 /* Floating animation */
@@ -146,16 +219,16 @@ html {
 
 /* Glowing effect */
 .glow-effect {
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  box-shadow: 0 0 20px hsla(var(--pink-500), 0.3);
 }
 
 .glow-effect-strong {
-  box-shadow: 0 0 40px rgba(236, 72, 153, 0.4), 0 0 80px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 0 40px hsla(var(--pink-500), 0.4), 0 0 80px hsla(var(--purple-500), 0.2);
 }
 
 /* Slider styles */
 .swiper-pagination-bullet {
-  background: #ec4899 !important;
+  background: hsl(var(--pink-500)) !important;
   opacity: 0.5 !important;
 }
 
@@ -166,12 +239,18 @@ html {
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #ec4899 !important;
+  color: hsl(var(--pink-500)) !important;
 }
 
 /* Animated background - Much more gentle */
 .animated-bg {
-  background: linear-gradient(-45deg, #f8fafc, #f1f5f9, #e2e8f0, #f0f9ff); /* Keep neutral for now */
+  background: linear-gradient(
+    -45deg,
+    hsl(var(--rose-50)),
+    hsl(var(--purple-50)),
+    hsl(var(--pink-50)),
+    hsl(var(--rose-100))
+  );
   background-size: 400% 400%;
   animation: gradient-shift 20s ease infinite;
 }
@@ -186,7 +265,7 @@ html {
 
 .particle {
   position: absolute;
-  background: rgba(236, 72, 153, 0.1); /* Pink-500/10% */
+  background: hsla(var(--pink-200), 0.1); /* Pink-200/10% */
   border-radius: 50%;
   animation: float 20s infinite linear;
 }
@@ -198,12 +277,19 @@ html {
 
 .hover-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.2); /* Pink-500/20% */
+  box-shadow: 0 10px 25px hsla(var(--pink-500), 0.2); /* Pink-500/20% */
 }
 
 /* Text animations */
 .text-shimmer {
-  background: linear-gradient(90deg, #ec4899, #a855f7, #f43f5e, #a855f7, #ec4899);
+  background: linear-gradient(
+    90deg,
+    hsl(var(--pink-500)),
+    hsl(var(--purple-500)),
+    hsl(var(--rose-500)),
+    hsl(var(--purple-500)),
+    hsl(var(--pink-500))
+  );
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;

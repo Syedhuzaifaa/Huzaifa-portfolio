@@ -3,28 +3,32 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
-import { Palette, Sparkles, Heart, Award, Star, Zap } from "lucide-react"
+import { Code, Server, Database, Zap } from "lucide-react" // Changed icons
 
 export function AboutSection() {
   const skills = [
-    "Figma",
-    "Canva",
-    "Adobe Creative Suite",
-    "Photoshop",
-    "Illustrator",
-    "InDesign",
-    "UI/UX Design",
-    "Logo Design",
-    "Brand Identity",
-    "Social Media Design",
-    "Print Design",
-    "Typography",
+    "WordPress Custom Theme Building",
+    "Elementor",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Bootstrap",
+    "Tailwind CSS",
+    "SASS",
+    "Laravel",
+    "Next.js",
+    "MongoDB",
+    "SQL",
+    "Responsive Design",
+    "User-Friendly Interfaces",
+    "Full-Stack Development",
   ]
 
   const stats = [
-    { icon: Palette, label: "Design Projects", value: "200+", color: "text-pink-500" },
-    { icon: Heart, label: "Happy Clients", value: "50+", color: "text-purple-500" },
-    { icon: Award, label: "Years Experience", value: "4+", color: "text-rose-500" },
+    { icon: Code, label: "Web Projects", value: "100+", color: "text-pink-500" }, // Updated
+    { icon: Server, label: "Years Experience", value: "4+", color: "text-purple-500" }, // Updated
+    { icon: Database, label: "Databases Used", value: "MongoDB & SQL", color: "text-rose-500" }, // Updated
   ]
 
   return (
@@ -75,9 +79,9 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="text-lg text-muted-foreground max-w-3xl mx-auto"
           >
-            I'm a passionate creative designer who believes in the power of visual storytelling. With a keen eye for
-            detail and a love for beautiful aesthetics, I help brands and individuals express their unique identity
-            through stunning design.
+            I'm a dedicated web developer passionate about crafting robust, user-friendly, and visually appealing
+            digital experiences. My expertise spans from custom WordPress theme development to building modern
+            full-stack applications.
           </motion.p>
         </motion.div>
 
@@ -102,9 +106,9 @@ export function AboutSection() {
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
               >
-                <Sparkles className="h-8 w-8 text-pink-500 mr-3" />
+                <Code className="h-8 w-8 text-pink-500 mr-3" /> {/* Changed icon */}
               </motion.div>
-              <h3 className="text-2xl font-bold gradient-text-alt">My Creative Journey</h3>
+              <h3 className="text-2xl font-bold gradient-text-alt">My Development Journey</h3>
             </div>
             <motion.p
               initial={{ opacity: 0 }}
@@ -113,8 +117,9 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="text-muted-foreground mb-6"
             >
-              My journey began with a simple love for colors and creativity. What started as doodling in notebooks has
-              evolved into a professional career helping brands tell their stories through compelling visual design.
+              My journey into web development began with a fascination for how websites are built and how they can
+              impact businesses. I started with HTML, CSS, and JavaScript, quickly moving into modern frameworks and
+              backend technologies.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -123,9 +128,9 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="text-muted-foreground mb-6"
             >
-              I specialize in creating cohesive brand identities, eye-catching social media content, and memorable
-              marketing materials. Every project is an opportunity to blend creativity with strategy, ensuring that
-              beautiful design also drives results.
+              I specialize in creating custom WordPress themes from scratch, translating Figma designs into
+              pixel-perfect websites, and building dynamic applications with React, Next.js, and Laravel. My goal is
+              always to deliver fully responsive, high-performance solutions.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -134,9 +139,8 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="text-muted-foreground"
             >
-              When I'm not designing, you can find me exploring art galleries, experimenting with new color palettes, or
-              sharing design tips on social media. I believe that great design has the power to inspire, connect, and
-              transform. ✨
+              Whether it's a simple static site or a complex web application with MongoDB or SQL databases, I focus on
+              clean code, scalability, and an exceptional user experience. Let's build something amazing together! 🚀
             </motion.p>
           </motion.div>
 
@@ -208,7 +212,7 @@ export function AboutSection() {
               animate={{ rotate: [0, -360] }}
               transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             >
-              <Star className="h-6 w-6 text-purple-500 ml-2" />
+              <Code className="h-6 w-6 text-purple-500 ml-2" /> {/* Changed icon */}
             </motion.div>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
@@ -217,7 +221,7 @@ export function AboutSection() {
                 key={skill}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }} // Reduced delay for faster appearance
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}

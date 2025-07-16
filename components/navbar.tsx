@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Moon, Sun, Sparkles, Star } from "lucide-react"
+import { Menu, X, Moon, Sun, Sparkles, Code } from "lucide-react" // Changed icon
 import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
 import { AnimatePresence } from "framer-motion"
@@ -36,7 +36,7 @@ export function Navbar() {
     setTimeout(() => {
       const element = document.querySelector(href)
       if (element) {
-        // Calculate the target scroll position, accounting for the fixed navbar height (h-16 = 64px)
+        // Calculate the target scroll position, accounting for the fixed navbar's height (h-16 = 64px)
         const offsetTop = element.getBoundingClientRect().top + window.scrollY - 64
         window.scrollTo({
           top: offsetTop,
@@ -80,7 +80,7 @@ export function Navbar() {
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                 />
               </motion.div>
-              <span className="gradient-text">Sarah</span>
+              <span className="gradient-text">Syed Huzaifa</span>
             </Link>
           </motion.div>
 
@@ -114,9 +114,9 @@ export function Navbar() {
                 <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 <motion.div
-                  className="absolute inset-0 rounded-full bg-pink-200/20"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+                  className="absolute inset-0 rounded-full bg-purple-300/40"
+                  animate={{ scale: [0.5, 1.5, 0.5], opacity: [0, 1, 0] }}
+                  transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "easeOut" }}
                 />
               </Button>
             </motion.div>
@@ -142,7 +142,7 @@ export function Navbar() {
                   transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                   className="ml-2"
                 >
-                  <Star className="h-4 w-4" />
+                  <Code className="h-4 w-4" /> {/* Changed icon */}
                 </motion.div>
               </Button>
             </motion.div>
@@ -206,7 +206,7 @@ export function Navbar() {
                       transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                       className="mr-2"
                     >
-                      <Star className="h-4 w-4" />
+                      <Code className="h-4 w-4" /> {/* Changed icon */}
                     </motion.div>
                     Hire Me
                   </Button>

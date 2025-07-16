@@ -14,10 +14,10 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/johndoe", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/johndoe", label: "LinkedIn" },
-    { icon: Instagram, href: "https://instagram.com/johndoe", label: "Instagram" },
-    { icon: Mail, href: "mailto:john.doe@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/syedhuzaifa", label: "GitHub" }, // Placeholder
+    { icon: Linkedin, href: "https://linkedin.com/in/syedhuzaifa", label: "LinkedIn" }, // Placeholder
+    { icon: Instagram, href: "https://instagram.com/syedhuzaifa", label: "Instagram" }, // Placeholder
+    { icon: Mail, href: "mailto:syed.huzaifa@example.com", label: "Email" }, // Placeholder
   ]
 
   return (
@@ -27,10 +27,10 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="text-2xl font-bold text-primary mb-4 block">
-              John Doe
+              Syed Huzaifa
             </Link>
             <p className="text-muted-foreground mb-4">
-              Creative Designer & Full-Stack Developer crafting beautiful digital experiences.
+              Dedicated Web Developer crafting robust and user-friendly digital experiences.
             </p>
             <div className="flex space-x-2">
               {socialLinks.map((social) => (
@@ -62,15 +62,15 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Get in Touch</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>john.doe@example.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>New York, NY</p>
+              <p>syed.huzaifa@example.com</p> {/* Placeholder */}
+              <p>+1 (555) 987-6543</p> {/* Placeholder */}
+              <p>Your City, Your Country</p> {/* Placeholder */}
             </div>
           </div>
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; {currentYear} John Doe. All rights reserved.</p>
+          <p>&copy; {currentYear} Syed Huzaifa. All rights reserved.</p>
         </div>
       </div>
     </footer>

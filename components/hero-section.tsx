@@ -1,130 +1,122 @@
-  "use client"
+"use client"
 
-  import { Button } from "@/components/ui/button"
-  import { ArrowDown, Download, Sparkles, Star, Heart } from "lucide-react"
-  import Image from "next/image"
-  import Link from "next/link"
-  import { motion } from "framer-motion"
-  import { useEffect, useState } from "react"
-  import { AnimatePresence } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { ArrowDown, Download, Sparkles, Code, Database } from "lucide-react" // Changed icons
+import Image from "next/image"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
+import { AnimatePresence } from "framer-motion"
 
-  
-  export function HeroSection() {
-    const [particles, setParticles] = useState<JSX.Element[]>([]);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-    const [isHovering, setIsHovering] = useState(false)
+export function HeroSection() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [isHovering, setIsHovering] = useState(false)
 
-    useEffect(() => {
-      const handleMouseMove = (e: MouseEvent) => {
-        // Get exact mouse position relative to viewport
-        const rect = document.documentElement.getBoundingClientRect()
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top,
-        })
-      }
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // Get exact mouse position relative to viewport
+      const rect = document.documentElement.getBoundingClientRect()
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      })
+    }
 
-      const handleMouseEnter = () => setIsHovering(true)
-      const handleMouseLeave = () => setIsHovering(false)
+    const handleMouseEnter = () => setIsHovering(true)
+    const handleMouseLeave = () => setIsHovering(false)
 
-      // Add event listener to the document
-      document.addEventListener("mousemove", handleMouseMove)
-      document.addEventListener("mouseenter", handleMouseEnter)
-      document.addEventListener("mouseleave", handleMouseLeave)
+    // Add event listener to the document
+    document.addEventListener("mousemove", handleMouseMove)
+    document.addEventListener("mouseenter", handleMouseEnter)
+    document.removeEventListener("mouseleave", handleMouseLeave) // Removed to keep ripple active
+    // Re-add mouseleave if you want the ripple to disappear when mouse leaves window
+    // document.addEventListener("mouseleave", handleMouseLeave);
 
-      return () => {
-        document.removeEventListener("mousemove", handleMouseMove)
-        document.removeEventListener("mouseenter", handleMouseEnter)
-        document.removeEventListener("mouseleave", handleMouseLeave)
-      }
-    }, [])
-useEffect(() => {
-  const newParticles = [...Array(8)].map((_, i) => {
-    const left = `${Math.random() * 100}%`;
-    const width = `${Math.random() * 3 + 1}px`;
-    const height = `${Math.random() * 3 + 1}px`;
-    const duration = Math.random() * 15 + 15;
-    const delay = Math.random() * 8;
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove)
+      document.removeEventListener("mouseenter", handleMouseEnter)
+      // document.removeEventListener("mouseleave", handleMouseLeave);
+    }
+  }, [])
 
-    return (
-      <motion.div
-        key={i}
-        className="particle bg-pink-200/5 absolute"
-        style={{ left, width, height }}
-        animate={{
-          y: [window.innerHeight, -100],
-          opacity: [0, 0.3, 0],
-        }}
-        transition={{
-          duration,
-          repeat: Number.POSITIVE_INFINITY,
-          delay,
-          ease: "linear",
-        }}
-      />
-    );
-  });
+  return (
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-pink-100 via-purple-50 to-rose-100 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20"
+    >
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        {/* Floating Shapes - Much more subtle */}
+        <motion.div
+          className="absolute top-20 left-10 w-20 h-20 bg-pink-300/30 rounded-full blur-xl"
+          animate={{
+            y: [0, -30, 0],
+            scale: [1, 1.1, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-40 right-20 w-32 h-32 bg-purple-300/30 rounded-full blur-xl"
+          animate={{
+            y: [0, 25, 0],
+            x: [0, -15, 0],
+            scale: [1, 0.9, 1],
+            opacity: [0.1, 0.25, 0.1],
+          }}
+          transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 2 }}
+        />
+        <motion.div
+          className="absolute bottom-20 left-20 w-24 h-24 bg-rose-300/30 rounded-full blur-xl"
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 20, 0],
+            opacity: [0.15, 0.3, 0.15],
+          }}
+          transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 4 }}
+        />
 
-  setParticles(newParticles);
-}, []);
+        {/* Much more subtle geometric shapes */}
+        <motion.div
+          className="absolute top-1/4 right-1/4 w-16 h-16 bg-gradient-to-r from-pink-200/5 to-purple-200/5"
+          style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
+          animate={{ rotate: [0, 360] }}
+          transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute bottom-1/3 left-1/3 w-12 h-12 bg-gradient-to-r from-rose-200/8 to-pink-200/8 rounded-lg"
+          animate={{
+            rotate: [0, 45, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{ duration: 7, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+        />
 
-    return (
-      <section
-        id="home"
-        className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-pink-100 via-purple-50 to-rose-100 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20"
-      >
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          {/* Floating Shapes - Much more subtle */}
-          <motion.div
-            className="absolute top-20 left-10 w-20 h-20 bg-pink-300/30 rounded-full blur-xl"
-            animate={{
-              y: [0, -30, 0],
-              scale: [1, 1.1, 1],
-              opacity: [0.1, 0.2, 0.1],
-            }}
-            transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute top-40 right-20 w-32 h-32 bg-purple-300/30 rounded-full blur-xl"
-            animate={{
-              y: [0, 25, 0],
-              x: [0, -15, 0],
-              scale: [1, 0.9, 1],
-              opacity: [0.1, 0.25, 0.1],
-            }}
-            transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 2 }}
-          />
-          <motion.div
-            className="absolute bottom-20 left-20 w-24 h-24 bg-rose-300/30 rounded-full blur-xl"
-            animate={{
-              y: [0, -20, 0],
-              x: [0, 20, 0],
-              opacity: [0.15, 0.3, 0.15],
-            }}
-            transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 4 }}
-          />
-
-          {/* Much more subtle geometric shapes */}
-          <motion.div
-            className="absolute top-1/4 right-1/4 w-16 h-16 bg-gradient-to-r from-pink-200/5 to-purple-200/5"
-            style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          />
-          <motion.div
-            className="absolute bottom-1/3 left-1/3 w-12 h-12 bg-gradient-to-r from-rose-200/8 to-pink-200/8 rounded-lg"
-            animate={{
-              rotate: [0, 45, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{ duration: 7, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-          />
-
-          {/* Much more subtle particle effect */}
-          <div className="particles absolute inset-0">{particles}</div>
-
+        {/* Much more subtle particle effect */}
+        <div className="particles">
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="particle bg-pink-200/5"
+              style={{
+                left: `${Math.random() * 100}%`,
+                width: `${Math.random() * 3 + 1}px`,
+                height: `${Math.random() * 3 + 1}px`,
+              }}
+              animate={{
+                y: [window.innerHeight, -100],
+                opacity: [0, 0.3, 0],
+              }}
+              transition={{
+                duration: Math.random() * 15 + 15,
+                repeat: Number.POSITIVE_INFINITY,
+                delay: Math.random() * 8,
+                ease: "linear",
+              }}
+            />
+          ))}
         </div>
+      </div>
 
       {/* Creative Mouse Follow Effects */}
       {/* Constellation Effect - Main cursor */}
@@ -275,7 +267,7 @@ useEffect(() => {
               />
               <Image
                 src="/placeholder.svg?height=200&width=200"
-                alt="Creative Designer"
+                alt="Syed Huzaifa - Web Developer"
                 width={200}
                 height={200}
                 className="rounded-full mx-auto border-4 border-pink-300 shadow-2xl glow-effect-strong relative z-10"
@@ -295,7 +287,7 @@ useEffect(() => {
                 }}
                 transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               >
-                <Heart className="h-5 w-5 text-white" />
+                <Code className="h-5 w-5 text-white" /> {/* Changed icon */}
               </motion.div>
             </div>
           </motion.div>
@@ -312,7 +304,7 @@ useEffect(() => {
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             >
-              Sarah
+              Syed Huzaifa
             </motion.span>
           </motion.h1>
 
@@ -327,7 +319,7 @@ useEffect(() => {
               animate={{ scale: [1, 1.02, 1] }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             >
-              Creative Designer & Visual Storyteller
+              Full-Stack Web Developer & WordPress Expert
             </motion.p>
           </motion.div>
 
@@ -337,8 +329,8 @@ useEffect(() => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto"
           >
-            I create stunning visual designs that capture hearts and tell compelling stories through logos, posters,
-            social media content, and beautiful presentations ✨
+            I build user-friendly, responsive websites from scratch, specializing in custom WordPress themes, modern
+            frontend frameworks, and robust backend solutions. Let's bring your digital vision to life! 🚀
           </motion.p>
 
           <motion.div
@@ -360,7 +352,7 @@ useEffect(() => {
                   >
                     <Sparkles className="mr-2 h-5 w-5" />
                   </motion.div>
-                  View My Work
+                  View My Web Projects
                 </Link>
               </Button>
             </motion.div>
@@ -395,7 +387,7 @@ useEffect(() => {
               }}
               transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             >
-              <Star className="h-8 w-8 text-pink-400 opacity-60" />
+              <Code className="h-8 w-8 text-pink-400 opacity-60" /> {/* Changed icon */}
             </motion.div>
           </div>
           <div className="absolute top-1/3 right-10 hidden lg:block">
@@ -406,7 +398,7 @@ useEffect(() => {
               }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 1 }}
             >
-              <Heart className="h-6 w-6 text-purple-400 opacity-60" />
+              <Database className="h-6 w-6 text-purple-400 opacity-60" /> {/* Changed icon */}
             </motion.div>
           </div>
         </div>

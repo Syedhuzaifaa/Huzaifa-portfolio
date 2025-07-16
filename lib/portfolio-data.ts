@@ -2,7 +2,7 @@ export interface PortfolioItem {
   id: string
   title: string
   description: string
-  category: "logos" | "posters" | "social-media" | "presentations" | "websites"
+  category: "websites" // Only "websites" category now
   image: string // Main thumbnail image
   images?: string[] // Array of additional images for detailed view
   technologies: string[]
@@ -12,174 +12,6 @@ export interface PortfolioItem {
 }
 
 export const portfolioData: PortfolioItem[] = [
-  // Logos
-  {
-    id: "1",
-    title: "TechStart Logo",
-    description: "Modern logo design for a technology startup, focusing on innovation and growth.",
-    category: "logos",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=TechStart+Logo+Mockup+1",
-      "/placeholder.svg?height=400&width=600&text=TechStart+Logo+Mockup+2",
-      "/placeholder.svg?height=400&width=600&text=TechStart+Logo+Variations",
-    ],
-    technologies: ["Adobe Illustrator", "Figma"],
-    year: "2024",
-  },
-  {
-    id: "2",
-    title: "Restaurant Brand Identity",
-    description: "Complete brand identity package for a local restaurant, including logo, menu, and signage.",
-    category: "logos",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Restaurant+Logo",
-      "/placeholder.svg?height=400&width=600&text=Menu+Design",
-      "/placeholder.svg?height=400&width=600&text=Signage+Mockup",
-    ],
-    technologies: ["Adobe Illustrator", "Photoshop"],
-    year: "2024",
-  },
-  {
-    id: "3",
-    title: "Fitness App Logo",
-    description: "Dynamic logo for a fitness tracking mobile application, conveying energy and progress.",
-    category: "logos",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Fitness+App+Logo+Main",
-      "/placeholder.svg?height=400&width=600&text=Fitness+App+Icon",
-    ],
-    technologies: ["Figma", "Adobe Illustrator"],
-    year: "2023",
-  },
-
-  // Posters
-  {
-    id: "4",
-    title: "Music Festival Poster",
-    description: "Vibrant poster design for an annual music festival, capturing the energetic atmosphere.",
-    category: "posters",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Music+Festival+Poster+Full",
-      "/placeholder.svg?height=400&width=600&text=Music+Festival+Poster+Detail",
-    ],
-    technologies: ["Adobe Photoshop", "Illustrator"],
-    year: "2024",
-  },
-  {
-    id: "5",
-    title: "Conference Event Poster",
-    description: "Professional poster for a tech conference, designed for clarity and impact.",
-    category: "posters",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Conference+Poster+A",
-      "/placeholder.svg?height=400&width=600&text=Conference+Poster+B",
-    ],
-    technologies: ["Canva", "Photoshop"],
-    year: "2024",
-  },
-  {
-    id: "6",
-    title: "Product Launch Poster",
-    description: "Marketing poster for a new product launch, highlighting key features.",
-    category: "posters",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Product+Launch+Poster+1",
-      "/placeholder.svg?height=400&width=600&text=Product+Launch+Poster+2",
-    ],
-    technologies: ["Adobe Creative Suite"],
-    year: "2023",
-  },
-
-  // Social Media
-  {
-    id: "7",
-    title: "LinkedIn Post Series",
-    description: "Engaging LinkedIn post templates for business content, designed for maximum reach.",
-    category: "social-media",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=LinkedIn+Post+1",
-      "/placeholder.svg?height=400&width=600&text=LinkedIn+Post+2",
-      "/placeholder.svg?height=400&width=600&text=LinkedIn+Post+3",
-    ],
-    technologies: ["Canva", "Figma"],
-    year: "2024",
-  },
-  {
-    id: "8",
-    title: "Instagram Story Templates",
-    description: "Branded Instagram story templates for social media marketing, dynamic and interactive.",
-    category: "social-media",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Instagram+Story+1",
-      "/placeholder.svg?height=400&width=600&text=Instagram+Story+2",
-    ],
-    technologies: ["Canva", "Adobe Photoshop"],
-    year: "2024",
-  },
-  {
-    id: "9",
-    title: "Facebook Ad Campaign",
-    description: "Social media graphics for Facebook advertising campaign, optimized for conversions.",
-    category: "social-media",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Facebook+Ad+1",
-      "/placeholder.svg?height=400&width=600&text=Facebook+Ad+2",
-    ],
-    technologies: ["Canva", "Figma"],
-    year: "2023",
-  },
-
-  // Presentations
-  {
-    id: "10",
-    title: "Startup Pitch Deck",
-    description: "Professional presentation for startup funding pitch, visually compelling and informative.",
-    category: "presentations",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Pitch+Deck+Slide+1",
-      "/placeholder.svg?height=400&width=600&text=Pitch+Deck+Slide+2",
-      "/placeholder.svg?height=400&width=600&text=Pitch+Deck+Slide+3",
-    ],
-    technologies: ["PowerPoint", "Figma"],
-    year: "2024",
-  },
-  {
-    id: "11",
-    title: "Sales Presentation",
-    description: "Compelling sales presentation with data visualization, designed to close deals.",
-    category: "presentations",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Sales+Presentation+1",
-      "/placeholder.svg?height=400&width=600&text=Sales+Presentation+2",
-    ],
-    technologies: ["PowerPoint", "Adobe Creative Suite"],
-    year: "2024",
-  },
-  {
-    id: "12",
-    title: "Training Workshop Slides",
-    description: "Educational presentation for employee training workshop, clear and engaging.",
-    category: "presentations",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Training+Slides+1",
-      "/placeholder.svg?height=400&width=600&text=Training+Slides+2",
-    ],
-    technologies: ["PowerPoint", "Canva"],
-    year: "2023",
-  },
-
   // Websites
   {
     id: "13",
@@ -192,15 +24,15 @@ export const portfolioData: PortfolioItem[] = [
       "/placeholder.svg?height=400&width=600&text=Product+Page",
       "/placeholder.svg?height=400&width=600&text=Checkout+Flow",
     ],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "MongoDB"],
     year: "2024",
     liveUrl: "https://example-ecommerce.com",
-    githubUrl: "https://github.com/johndoe/ecommerce",
+    githubUrl: "https://github.com/syedhuzaifa/ecommerce", // Placeholder
   },
   {
     id: "14",
-    title: "Restaurant Website",
-    description: "Responsive website for a local restaurant with online ordering, beautiful and functional.",
+    title: "Restaurant Website with Online Ordering",
+    description: "Responsive website for a local restaurant with online ordering, built with React and Node.js.",
     category: "websites",
     image: "/placeholder.svg?height=300&width=400",
     images: [
@@ -208,36 +40,73 @@ export const portfolioData: PortfolioItem[] = [
       "/placeholder.svg?height=400&width=600&text=Menu+Page",
       "/placeholder.svg?height=400&width=600&text=Online+Ordering",
     ],
-    technologies: ["React", "Node.js", "MongoDB", "CSS"],
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "CSS"],
     year: "2024",
     liveUrl: "https://example-restaurant.com",
+    githubUrl: "https://github.com/syedhuzaifa/restaurant-app", // Placeholder
   },
   {
     id: "15",
-    title: "Portfolio Website",
-    description: "Personal portfolio website for a photographer, showcasing stunning visuals.",
+    title: "Personal Portfolio Website",
+    description: "A modern and responsive personal portfolio website showcasing development projects.",
     category: "websites",
     image: "/placeholder.svg?height=300&width=400",
     images: [
-      "/placeholder.svg?height=400&width=600&text=Photographer+Portfolio+Home",
-      "/placeholder.svg?height=400&width=600&text=Gallery+Page",
+      "/placeholder.svg?height=400&width=600&text=Portfolio+Home",
+      "/placeholder.svg?height=400&width=600&text=Portfolio+About",
+      "/placeholder.svg?height=400&width=600&text=Portfolio+Projects",
     ],
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     year: "2023",
-    liveUrl: "https://photographer-portfolio.com",
+    liveUrl: "https://syedhuzaifa-portfolio.com", // Placeholder
+    githubUrl: "https://github.com/syedhuzaifa/personal-portfolio", // Placeholder
   },
   {
     id: "16",
-    title: "SaaS Dashboard",
-    description: "Modern dashboard for a SaaS application with analytics, intuitive and data-rich.",
+    title: "SaaS Dashboard Application",
+    description: "An intuitive and data-rich dashboard for a SaaS application, built with React and a SQL backend.",
     category: "websites",
     image: "/placeholder.svg?height=300&width=400",
     images: [
       "/placeholder.svg?height=400&width=600&text=Dashboard+Overview",
       "/placeholder.svg?height=400&width=600&text=Analytics+View",
+      "/placeholder.svg?height=400&width=600&text=User+Management",
     ],
-    technologies: ["React", "TypeScript", "Chart.js", "Material-UI"],
+    technologies: ["React", "TypeScript", "Chart.js", "Material-UI", "Laravel", "SQL"],
     year: "2023",
     liveUrl: "https://saas-dashboard.com",
+    githubUrl: "https://github.com/syedhuzaifa/saas-dashboard", // Placeholder
+  },
+  {
+    id: "17",
+    title: "Custom WordPress Blog Theme",
+    description: "A fully custom, responsive WordPress theme built from scratch for a modern blog.",
+    category: "websites",
+    image: "/placeholder.svg?height=300&width=400",
+    images: [
+      "/placeholder.svg?height=400&width=600&text=WordPress+Blog+Homepage",
+      "/placeholder.svg?height=400&width=600&text=WordPress+Blog+Post",
+      "/placeholder.svg?height=400&width=600&text=WordPress+Blog+Responsive",
+    ],
+    technologies: ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "Elementor"],
+    year: "2024",
+    liveUrl: "https://custom-wp-blog.com", // Placeholder
+    githubUrl: "https://github.com/syedhuzaifa/wp-custom-theme", // Placeholder
+  },
+  {
+    id: "18",
+    title: "Static Marketing Website",
+    description: "A fast, responsive static website built with HTML, CSS, and JavaScript for a marketing campaign.",
+    category: "websites",
+    image: "/placeholder.svg?height=300&width=400",
+    images: [
+      "/placeholder.svg?height=400&width=600&text=Static+Site+Homepage",
+      "/placeholder.svg?height=400&width=600&text=Static+Site+Features",
+      "/placeholder.svg?height=400&width=600&text=Static+Site+Contact",
+    ],
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "SASS"],
+    year: "2023",
+    liveUrl: "https://static-marketing-site.com", // Placeholder
+    githubUrl: "https://github.com/syedhuzaifa/static-marketing-site", // Placeholder
   },
 ]
