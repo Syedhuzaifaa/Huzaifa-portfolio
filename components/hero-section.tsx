@@ -276,7 +276,7 @@ export function HeroSection() {
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               />
               <Image
-                src="/huz.png?height=200&width=200"
+                src="/huzi.png?height=200&width=200"
                 alt="Syed Huzaifa - Web Developer"
                 width={200}
                 height={200}
