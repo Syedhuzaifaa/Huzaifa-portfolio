@@ -50,82 +50,77 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "15",
-    title: "Restaurant Website with Online Ordering",
-    description: "Responsive website for a local restaurant with online ordering, built with React and Node.js.",
+    title: "Ismail Resin",
+    description: "Responsive website for a Resin Company built with Bootstrap and Laravel.",
     category: "websites",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/resin1.png?height=300&width=400",
     images: [
-      "/placeholder.svg?height=400&width=600&text=Restaurant+Homepage",
-      "/placeholder.svg?height=400&width=600&text=Menu+Page",
-      "/placeholder.svg?height=400&width=600&text=Online+Ordering",
+      "/resin1.png?height=400&width=600&text=Restaurant+Homepage",
+      "/resin2.png?height=400&width=600&text=Menu+Page",
+      "/resin3.png?height=400&width=600&text=Online+Ordering",
+      "/resin4.png?height=400&width=600&text=Online+Ordering",
+      "/resin5.png?height=400&width=600&text=Online+Ordering",
     ],
-    technologies: ["React", "Node.js", "Express.js", "MongoDB", "CSS"],
-    year: "2024",
-    liveUrl: "https://example-restaurant.com",
-    githubUrl: "https://github.com/syedhuzaifa/restaurant-app", // Placeholder
+    technologies: ["HTML", "Css", "JS", "Bootstrap", "Laravel", "SQL"],
+    year: "2023",
+    liveUrl: "https://www.ismailresin.com.pk/",
+    // githubUrl: "https://github.com/syedhuzaifa/restaurant-app", // Placeholder
   },
   {
     id: "16",
-    title: "Personal Portfolio Website",
-    description: "A modern and responsive personal portfolio website showcasing development projects.",
+    title: "Exhibition Order Taking Website",
+    description: "A modern and responsive personal Order Taking website showcasing all the products.",
     category: "websites",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/online1.png?height=300&width=400",
     images: [
-      "/placeholder.svg?height=400&width=600&text=Portfolio+Home",
-      "/placeholder.svg?height=400&width=600&text=Portfolio+About",
-      "/placeholder.svg?height=400&width=600&text=Portfolio+Projects",
+      "/online2.png?height=400&width=600&text=Portfolio+Home",
+      "/online3.png?height=400&width=600&text=Portfolio+About",
+      "/online4.png?height=400&width=600&text=Portfolio+Projects",
+      "/online5.png?height=400&width=600&text=Portfolio+Projects",
+      "/online6.png?height=400&width=600&text=Portfolio+Projects",
     ],
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    technologies: ["HTML", "CSS", "BootStrap", "Laravel", "SQL"],
     year: "2023",
-    liveUrl: "https://syedhuzaifa-portfolio.com", // Placeholder
-    githubUrl: "https://github.com/syedhuzaifa/personal-portfolio", // Placeholder
+    liveUrl: "https://online.ismailindustries.com.pk/", // Placeholder
+    // githubUrl: "https://github.com/syedhuzaifa/personal-portfolio", // Placeholder
   },
   {
     id: "17",
-    title: "SaaS Dashboard Application",
-    description: "An intuitive and data-rich dashboard for a SaaS application, built with React and a SQL backend.",
+    title: "Broad Mind Interior",
+    description: "Blog Website Showcasing the interior work and services, built with React & Next.js.",
     category: "websites",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/bmi1.png?height=300&width=400",
     images: [
-      "/placeholder.svg?height=400&width=600&text=Dashboard+Overview",
-      "/placeholder.svg?height=400&width=600&text=Analytics+View",
-      "/placeholder.svg?height=400&width=600&text=User+Management",
+      "/bmi2.png?height=400&width=600&text=Dashboard+Overview",
+      "/bmi3.png?height=400&width=600&text=Analytics+View",
+      "/bmi4.png?height=400&width=600&text=User+Management",
+      "/bmi5.png?height=400&width=600&text=User+Management",
+      "/bmi6.png?height=400&width=600&text=User+Management",
     ],
-    technologies: ["React", "TypeScript", "Chart.js", "Material-UI", "Laravel", "SQL"],
+    technologies: ["React", "TypeScript", "Next.js", "MongoDB"],
     year: "2023",
-    liveUrl: "https://saas-dashboard.com",
-    githubUrl: "https://github.com/syedhuzaifa/saas-dashboard", // Placeholder
+    liveUrl: "https://www.bmiinterior.com/",
+    // githubUrl: "https://github.com/syedhuzaifa/saas-dashboard", // Placeholder
   },
   {
     id: "18",
-    title: "Custom WordPress Blog Theme",
-    description: "A fully custom, responsive WordPress theme built from scratch for a modern blog.",
+    title: "Orbit UAE",
+    description: "A fully custom, responsive WordPress theme built from scratch for a Product Showcase.",
     category: "websites",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/worky.png?height=300&width=400",
     images: [
-      "/placeholder.svg?height=400&width=600&text=WordPress+Blog+Homepage",
-      "/placeholder.svg?height=400&width=600&text=WordPress+Blog+Post",
-      "/placeholder.svg?height=400&width=600&text=WordPress+Blog+Responsive",
+      "/worky4.png?height=400&width=600&text=WordPress+Blog+Responsive",
+      "/worky5.png?height=400&width=600&text=WordPress+Blog+Responsive",
+      // "/worky1.png?height=400&width=600&text=WordPress+Blog+Homepage",
+      "/worky2.png?height=400&width=600&text=WordPress+Blog+Post",
+      "/worky3.png?height=400&width=600&text=WordPress+Blog+Responsive",
+      "/worky6.png?height=400&width=600&text=WordPress+Blog+Responsive",
+      "/worky7.png?height=400&width=600&text=WordPress+Blog+Responsive",
     ],
     technologies: ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "Elementor"],
     year: "2024",
-    liveUrl: "https://custom-wp-blog.com", // Placeholder
-    githubUrl: "https://github.com/syedhuzaifa/wp-custom-theme", // Placeholder
+    liveUrl: "https://worky.orbituae.com/", // Placeholder
+    // githubUrl: "https://github.com/syedhuzaifa/wp-custom-theme", // Placeholder
   },
-  {
-    id: "19",
-    title: "Static Marketing Website",
-    description: "A fast, responsive static website built with HTML, CSS, and JavaScript for a marketing campaign.",
-    category: "websites",
-    image: "/placeholder.svg?height=300&width=400",
-    images: [
-      "/placeholder.svg?height=400&width=600&text=Static+Site+Homepage",
-      "/placeholder.svg?height=400&width=600&text=Static+Site+Features",
-      "/placeholder.svg?height=400&width=600&text=Static+Site+Contact",
-    ],
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "SASS"],
-    year: "2023",
-    liveUrl: "https://static-marketing-site.com", // Placeholder
-    githubUrl: "https://github.com/syedhuzaifa/static-marketing-site", // Placeholder
-  },
+ 
 ]

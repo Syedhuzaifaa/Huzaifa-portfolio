@@ -121,11 +121,8 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
                       height={500}
                       className="w-full h-64 md:h-80 object-cover"
                     />
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+
                     />
                   </motion.div>
                   <div className="absolute bottom-4 left-4 right-4">
@@ -304,7 +301,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
                 className="absolute top-4 right-4 bg-white/80 hover:bg-white rounded-full z-10"
                 onClick={closeModal}
               >
-                <X className="h-5 w-5" />
+                <X className="h-5 w-5 text-black" />
               </Button>
 
               <div className="relative">
@@ -327,7 +324,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
                       className="absolute left-4 top-40 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full z-10"
                       onClick={prevModalImage}
                     >
-                      <ChevronLeft className="h-5 w-5" />
+                      <ChevronLeft className="h-5 w-5 text-black" />
                     </Button>
                     <Button
                       variant="ghost"
@@ -335,7 +332,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
                       className="absolute right-4 top-40 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full z-10"
                       onClick={nextModalImage}
                     >
-                      <ChevronRight className="h-5 w-5" />
+                      <ChevronRight className="h-5 w-5 text-black" />
                     </Button>
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
                       {currentModalImageIndex + 1} / {selectedItem.images.length}

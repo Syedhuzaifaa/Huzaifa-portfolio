@@ -276,7 +276,7 @@ export function HeroSection() {
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               />
               <Image
-                src="/placeholder.svg?height=200&width=200"
+                src="/huz.jpeg?height=200&width=200"
                 alt="Syed Huzaifa - Web Developer"
                 width={200}
                 height={200}
@@ -376,7 +376,7 @@ export function HeroSection() {
                 <Link href="#contact">Let's Collaborate</Link>
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 variant="ghost"
@@ -385,7 +385,7 @@ export function HeroSection() {
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
               </Button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Floating Icons */}
@@ -415,7 +415,7 @@ export function HeroSection() {
       </div>
 
       {/* Animated Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.2 }}
@@ -432,7 +432,7 @@ export function HeroSection() {
           <span className="text-sm text-pink-600 mb-2">Scroll Down</span>
           <ArrowDown className="h-6 w-6 text-pink-500" />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </section>
   )
 }
