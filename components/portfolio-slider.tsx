@@ -197,7 +197,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2"
+                className="absolute left-4 top-40 -translate-y-1/2"
               >
                 <Button
                   variant="ghost"
@@ -211,7 +211,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2"
+                className="absolute right-4 top-40 -translate-y-1/2"
               >
                 <Button
                   variant="ghost"
@@ -232,7 +232,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex justify-center mt-6 gap-2 overflow-x-auto pb-2"
+            className="flex justify-center mt-6 gap-2 overflow-x-auto p-2"
           >
             {items.map((item, index) => (
               <motion.button
@@ -313,7 +313,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
                   alt={selectedItem.title}
                   width={800}
                   height={500}
-                  className="w-full h-64 md:h-80 object-cover rounded-t-2xl"
+                  className="w-full h-64 md:h-80 object-contain rounded-t-2xl"
                 />
                 <Badge className="absolute top-4 left-4 bg-pink-500/90 text-white border-0">
                   {selectedItem.category}
@@ -324,7 +324,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full z-10"
+                      className="absolute left-4 top-40 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full z-10"
                       onClick={prevModalImage}
                     >
                       <ChevronLeft className="h-5 w-5" />
@@ -332,7 +332,7 @@ export function PortfolioSlider({ items, title, description }: PortfolioSliderPr
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full z-10"
+                      className="absolute right-4 top-40 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full z-10"
                       onClick={nextModalImage}
                     >
                       <ChevronRight className="h-5 w-5" />

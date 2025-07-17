@@ -11,7 +11,13 @@ import { AnimatePresence } from "framer-motion"
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const [windowHeight, setWindowHeight] = useState<number | null>(null)
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowHeight(window.innerHeight)
+    }
+  }, [])
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       // Get exact mouse position relative to viewport
@@ -93,28 +99,32 @@ export function HeroSection() {
         />
 
         {/* Much more subtle particle effect */}
-        <div className="particles">
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="particle bg-pink-200/5"
-              style={{
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 3 + 1}px`,
-                height: `${Math.random() * 3 + 1}px`,
-              }}
-              animate={{
-                y: [window.innerHeight, -100],
-                opacity: [0, 0.3, 0],
-              }}
-              transition={{
-                duration: Math.random() * 15 + 15,
-                repeat: Number.POSITIVE_INFINITY,
-                delay: Math.random() * 8,
-                ease: "linear",
-              }}
-            />
-          ))}
+        <div className="particles relative">
+          {windowHeight !== null &&
+            [...Array(8)].map((_, i) => {
+              const size = Math.random() * 3 + 1
+              return (
+                <motion.div
+                  key={i}
+                  className="particle bg-pink-200/5 absolute rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    width: `${size}px`,
+                    height: `${size}px`,
+                  }}
+                  animate={{
+                    y: [windowHeight, -100],
+                    opacity: [0, 0.3, 0],
+                  }}
+                  transition={{
+                    duration: Math.random() * 15 + 15,
+                    repeat: Infinity,
+                    delay: Math.random() * 8,
+                    ease: "linear",
+                  }}
+                />
+              )
+            })}
         </div>
       </div>
 

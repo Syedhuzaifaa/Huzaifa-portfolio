@@ -14,23 +14,42 @@ export interface PortfolioItem {
 export const portfolioData: PortfolioItem[] = [
   // Websites
   {
-    id: "13",
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce website with payment integration, responsive and secure.",
+     id: "13",
+    title: "Primordial Website",
+    description: "website with Email Sender, responsive.",
     category: "websites",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/premordial1.png?height=300&width=400",
     images: [
-      "/placeholder.svg?height=400&width=600&text=E-commerce+Homepage",
-      "/placeholder.svg?height=400&width=600&text=Product+Page",
-      "/placeholder.svg?height=400&width=600&text=Checkout+Flow",
+      "/premordial2.png?height=400&width=600&text=E-commerce+Homepage",
+      "/premordial3.png?height=400&width=600&text=Product+Page",
+      "/premordial4.png?height=400&width=600&text=Checkout+Flow",
+      "/premordial5.png?height=400&width=600&text=Checkout+Flow",
     ],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "MongoDB"],
+    technologies: ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "Elementor"],
     year: "2024",
-    liveUrl: "https://example-ecommerce.com",
-    githubUrl: "https://github.com/syedhuzaifa/ecommerce", // Placeholder
+    liveUrl: "https://primordialcreations.com",
+    // githubUrl: "https://github.com/syedhuzaifa/ecommerce", // Placeholder
   },
   {
     id: "14",
+    title: "FHS ZOOM (Product Website)",
+    description: "Full-stack E-commerce Product website, responsive and secure.",
+    category: "websites",
+    image: "/fhs2.png?height=300&width=400",
+    images: [
+      "/fhs1.png?height=400&width=600&text=E-commerce+Homepage",
+      "/fhs2.png?height=400&width=600&text=E-commerce+Homepage",
+      "/fhs3.png?height=400&width=600&text=Product+Page",
+      "/fhs4.png?height=400&width=600&text=Checkout+Flow",
+      "/fhs5.png?height=400&width=600&text=Checkout+Flow",
+    ],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+    year: "2024",
+    liveUrl: "https://fhszoom.net",
+    githubUrl: "https://github.com/syedhuzaifa/fhszoom", // Placeholder
+  },
+  {
+    id: "15",
     title: "Restaurant Website with Online Ordering",
     description: "Responsive website for a local restaurant with online ordering, built with React and Node.js.",
     category: "websites",
@@ -46,7 +65,7 @@ export const portfolioData: PortfolioItem[] = [
     githubUrl: "https://github.com/syedhuzaifa/restaurant-app", // Placeholder
   },
   {
-    id: "15",
+    id: "16",
     title: "Personal Portfolio Website",
     description: "A modern and responsive personal portfolio website showcasing development projects.",
     category: "websites",
@@ -62,7 +81,7 @@ export const portfolioData: PortfolioItem[] = [
     githubUrl: "https://github.com/syedhuzaifa/personal-portfolio", // Placeholder
   },
   {
-    id: "16",
+    id: "17",
     title: "SaaS Dashboard Application",
     description: "An intuitive and data-rich dashboard for a SaaS application, built with React and a SQL backend.",
     category: "websites",
@@ -78,7 +97,7 @@ export const portfolioData: PortfolioItem[] = [
     githubUrl: "https://github.com/syedhuzaifa/saas-dashboard", // Placeholder
   },
   {
-    id: "17",
+    id: "18",
     title: "Custom WordPress Blog Theme",
     description: "A fully custom, responsive WordPress theme built from scratch for a modern blog.",
     category: "websites",
@@ -94,7 +113,7 @@ export const portfolioData: PortfolioItem[] = [
     githubUrl: "https://github.com/syedhuzaifa/wp-custom-theme", // Placeholder
   },
   {
-    id: "18",
+    id: "19",
     title: "Static Marketing Website",
     description: "A fast, responsive static website built with HTML, CSS, and JavaScript for a marketing campaign.",
     category: "websites",
