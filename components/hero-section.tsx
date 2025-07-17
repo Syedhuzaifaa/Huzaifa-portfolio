@@ -48,7 +48,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-pink-100 via-purple-50 to-rose-100 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20"
+      className="pt-[4rem] min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-pink-100 via-purple-50 to-rose-100 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">

@@ -6,68 +6,69 @@ import { Star } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function TestimonialsSection() {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      role: "Marketing Director",
-      company: "TechStart Inc.",
-      image: "/placeholder.svg?height=60&width=60",
-      rating: 5,
-      quote:
-        "John delivered an exceptional website that perfectly captured our brand. His attention to detail and creative vision exceeded our expectations.",
-    },
-    {
-      id: 2,
-      name: "Michael Chen",
-      role: "CEO",
-      company: "Digital Solutions",
-      image: "/placeholder.svg?height=60&width=60",
-      rating: 5,
-      quote:
-        "Working with John was a pleasure. He created stunning social media graphics that significantly boosted our engagement rates.",
-    },
-    {
-      id: 3,
-      name: "Emily Rodriguez",
-      role: "Product Manager",
-      company: "InnovateCorp",
-      image: "/placeholder.svg?height=60&width=60",
-      rating: 5,
-      quote:
-        "John's full-stack development skills are impressive. He built our web application from scratch and delivered it on time and within budget.",
-    },
-    {
-      id: 4,
-      name: "David Thompson",
-      role: "Startup Founder",
-      company: "GrowthLab",
-      image: "/placeholder.svg?height=60&width=60",
-      rating: 5,
-      quote:
-        "The logo and brand identity John created for us perfectly represents our company values. Highly recommended for any design work.",
-    },
-    {
-      id: 5,
-      name: "Lisa Wang",
-      role: "Event Coordinator",
-      company: "EventPro",
-      image: "/placeholder.svg?height=60&width=60",
-      rating: 5,
-      quote:
-        "John designed amazing posters for our events. His creative approach and quick turnaround made our collaboration seamless.",
-    },
-    {
+ const testimonials = [
+  {
+    id: 1,
+    name: "Zainab Ali",
+    role: "Co-Founder",
+    company: "The Social Nest",
+    image: "/person.png?height=60&width=60",
+    rating: 5,
+    quote:
+      "Huzaifa was super easy to work with. He really understood what we needed and built a clean, fast website that our users love. The process was smooth, and he handled everything from start to finish without needing constant input.",
+  },
+  {
+    id: 2,
+    name: "Hamza Rafiq",
+    role: "Founder",
+    company: "Rafiq Prints",
+    image: "/person.png?height=60&width=60",
+    rating: 5,
+    quote:
+      "I wasn’t sure what I wanted at first, but Huzaifa guided me through it all. The site turned out way better than I expected. Super happy with how professional it looks now.",
+  },
+      {
       id: 6,
       name: "Alex Kumar",
       role: "Business Owner",
       company: "Local Restaurant",
-      image: "/placeholder.svg?height=60&width=60",
+      image: "/person.png?height=60&width=60",
       rating: 5,
       quote:
         "The presentation design John created helped us secure important investors. His work is professional and impactful.",
     },
-  ]
+  {
+    id: 3,
+    name: "Nimra Qureshi",
+    role: "Freelance Photographer",
+    company: "Nimra Shoots",
+    image: "/person.png?height=60&width=60",
+    rating: 5,
+    quote:
+      "I needed a portfolio that felt personal but still professional. Huzaifa nailed it. It’s simple, fast, and exactly how I imagined — maybe even better.",
+  },
+  {
+    id: 4,
+    name: "Tariq Mehmood",
+    role: "Manager",
+    company: "Pak Home Services",
+    image: "/person.png?height=60&width=60",
+    rating: 5,
+    quote:
+      "We had a tight deadline and not much clarity on design, but Huzaifa still managed to deliver on time and made everything look clean and modern. Definitely working with him again.",
+  },
+  {
+    id: 5,
+    name: "Imran Zubair",
+    role: "Operations Lead",
+    company: "LogiFleet",
+    image: "/person.png?height=60&width=60",
+    rating: 5,
+    quote:
+      "The dashboard he built for our internal team works flawlessly. It’s clean, responsive, and makes our daily tasks so much easier now.",
+  },
+]
+
 
   return (
     <section className="py-20">
@@ -104,7 +105,7 @@ export function TestimonialsSection() {
                   <blockquote className="text-muted-foreground mb-6 italic">"{testimonial.quote}"</blockquote>
                   <div className="flex items-center">
                     <Avatar className="h-12 w-12 mr-4">
-                      <AvatarImage src={testimonial.image || "/placeholder.svg"} alt={testimonial.name} />
+                      <AvatarImage src={testimonial.image || "/person.png"} alt={testimonial.name} />
                       <AvatarFallback>
                         {testimonial.name
                           .split(" ")

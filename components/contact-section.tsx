@@ -1,8 +1,8 @@
+
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useTransition } from "react" // 👈 useTransition for pending state
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -10,32 +10,57 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { useToast } from "@/hooks/use-toast"
+// import { useToast } from "@/hooks/use-toast"
+import { submitContactForm } from "@/app/actions/contact"
+import { Toaster } from "@/components/ui/toaster"
+import { useToast } from "@/hooks/use-toast" // ✅ make sure this is also imported
+
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "", // capital "S"
+    message: "", // not "message"
+  })
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  // const { toast } = useToast()
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  setIsSubmitting(true)
+
+  const form = new FormData()
+  form.append("name", formData.name)
+  form.append("email", formData.email)
+  form.append("message", formData.message)
+
+  try {
+    const response = await submitContactForm(form)
 
     toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
+      title: response.success ? "Message sent!" : "Something went wrong",
+      description: response.message,
+      variant: response.success ? "default" : "destructive",
     })
 
-    setFormData({ name: "", email: "", message: "" })
+    if (response.success) {
+      setFormData({ name: "", email: "", message: "" })
+    }
+  } catch (err) {
+    toast({
+      title: "Server Error",
+      description: "Something went wrong while sending your message.",
+      variant: "destructive",
+    })
+  } finally {
     setIsSubmitting(false)
   }
+}
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
@@ -48,19 +73,19 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "john.doe@example.com",
-      href: "mailto:john.doe@example.com",
+      value: "syedhuzaifa1120@gmail.com",
+      href: "mailto:syedhuzaifa1120@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+92 308 8290018",
+      href: "#",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "New York, NY",
+      value: "Karachi, Pakistan",
       href: "#",
     },
   ]
@@ -69,17 +94,17 @@ export function ContactSection() {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/johndoe",
+      href: "https://github.com/syedhuzaifaa",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/johndoe",
+      href: "https://linkedin.com/in/syedhuzaifaa",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://instagram.com/johndoe",
+      href: "https://instagram.com/syedhuzaifaa",
     },
   ]
 

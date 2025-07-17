@@ -14,10 +14,10 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/syedhuzaifa", label: "GitHub" }, // Placeholder
+    { icon: Github, href: "https://github.com/syedhuzaifaa", label: "GitHub" }, // Placeholder
     { icon: Linkedin, href: "https://linkedin.com/in/syedhuzaifa", label: "LinkedIn" }, // Placeholder
     { icon: Instagram, href: "https://instagram.com/syedhuzaifa", label: "Instagram" }, // Placeholder
-    { icon: Mail, href: "mailto:syed.huzaifa@example.com", label: "Email" }, // Placeholder
+    { icon: Mail, href: "mailto:syedhuzaifa1120@gmail.com", label: "Email" }, // Placeholder
   ]
 
   return (
@@ -62,9 +62,9 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Get in Touch</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>syed.huzaifa@example.com</p> {/* Placeholder */}
-              <p>+1 (555) 987-6543</p> {/* Placeholder */}
-              <p>Your City, Your Country</p> {/* Placeholder */}
+              <p>syedhuzaifa1120@gmail.com</p> {/* Placeholder */}
+              <p>+92 308 8290018</p> {/* Placeholder */}
+              <p>Karachi, Pakistan</p> {/* Placeholder */}
             </div>
           </div>
         </div>
